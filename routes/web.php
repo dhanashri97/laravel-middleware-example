@@ -22,14 +22,19 @@ use Illuminate\Support\Facades\Route;
 
 
 //group middleware routing
-Route::view("check","check");
-Route::view("user","users");
-Route::view('noaccesspage','noaccess');
+// Route::view("check","check");
+// Route::view("user","users");
+// Route::view('noaccesspage','noaccess');
 
-Route::group(['middleware'=>['protectPage']],function(){
-    Route::view('user','users');
-    Route::get('/', function () {
-        return view('welcome');
-    });
+// Route::group(['middleware'=>['protectPage']],function(){
+//     Route::view('user','users');
+//     Route::get('/', function () {
+//         return view('welcome');
+//     });
     
-});
+// });
+
+//route middleware
+Route::view("user","users")->middleware('protectPage');
+Route::view('noaccesspage','noaccess');
+Route::view("check","check");
