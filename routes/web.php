@@ -35,6 +35,3 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //route middleware
-Route::view("user","users")->middleware('protectPage');
-Route::view('noaccesspage','noaccess');
-Route::view("check","check");
