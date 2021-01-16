@@ -12,6 +12,8 @@ class Customer extends Controller
     {
         // echo "api call will be here ";
 
-        return Http::get("http://dummy.restapiexample.com/api/v1/employees");
+        $data=Http::get("http://reqres.in/api/Users?page=1");
+        return view('customer',['collection'=>$data['data']]);
+        
     }
 }
