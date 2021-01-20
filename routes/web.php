@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Customer;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,5 +42,16 @@ Route::get('/', function () {
     
 // });
 
-Route::get("/customer",[Customer::class,'index']);
+// Route::get("/customer",[Customer::class,'index']);
 
+Route::view("login","home");
+
+//post method
+ Route::POST("/home",[HomeController::class,'testRequest']);
+
+
+//put method
+Route::PUT("/home",[HomeController::class,'testRequest']);
+
+//delete method
+Route::DELETE("/home",[HomeController::class,'testRequest']);
